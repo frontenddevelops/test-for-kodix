@@ -35,7 +35,7 @@ export const Timer = () => {
         () => {
             setCurrentTime(prevTime => prevTime + state.currentInterval);
         },
-        isRunning ? state.currentInterval * 1000 : null
+        isRunning ? state.currentInterval < 0 ? (-1) * state.currentInterval * 1000 :  state.currentInterval * 1000 : null
     );
 
 
